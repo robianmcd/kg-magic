@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Join Game</h1>
+    </ion-header-bar>
+    <ion-content>
+        <h5>{{joinCtrl.game.title}}</h5>
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Deck
+                </div>
+                <select ng-model="joinCtrl.selectedDeck" ng-options="deck as deck.title for deck in joinCtrl.decks"></select>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="button button-block" ng-click="joinCtrl.cancel()">
+                    Cancel
+                </button>
+            </div>
+            <div class="col">
+                <button class="button button-block button-positive" ng-click="joinCtrl.joinGame()">
+                    Join Game
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

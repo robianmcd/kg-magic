@@ -1,0 +1,31 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Create Game</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Game Name</span>
+                <input type="text" placeholder="Game Name" ng-model="createCtrl.gameName">
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Deck
+                </div>
+                <select ng-model="createCtrl.selectedDeck" ng-options="deck as deck.title for deck in createCtrl.decks"></select>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="button button-block" ng-click="createCtrl.cancel()">
+                    Cancel
+                </button>
+            </div>
+            <div class="col">
+                <button class="button button-block button-positive" ng-click="createCtrl.createGame()">
+                    Create Game
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

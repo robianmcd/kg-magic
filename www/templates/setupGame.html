@@ -1,0 +1,19 @@
+<ion-view view-title="Setup Game">
+    <ion-content>
+        <button class="button button-full button-positive" ng-click="ctrl.createGame()">Create Game</button>
+
+        <ion-list class="list">
+            <ion-item class="item item-divider">
+                Join Game
+            </ion-item>
+            <ion-item class="item item-avatar item-icon-right" ng-repeat="game in ctrl.games" ng-if="!game.joiner" ng-click="ctrl.joinGame(game)">
+                <img ng-src="{{game.creator.pic}}">
+
+                <h2>{{game.title}}</h2>
+
+                <p></p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

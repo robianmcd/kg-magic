@@ -1,0 +1,65 @@
+<ion-view view-title="Game">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-assertive" ng-click="ctrl.endGame()">
+            End Game
+        </button>
+    </ion-nav-buttons>
+    <ion-pane>
+        <div class="row counter-row">
+            <div class="counter-container">
+                <div class="top-counter-container">
+                    <div class="row">
+                        <div class="margin-center">
+                            <button class="button icon ion-minus" ng-click="ctrl.getOpponentPlayer().life = ctrl.getOpponentPlayer().life - 1"></button>
+                            <div class="counter-number">{{ctrl.getOpponentPlayer().life}}</div>
+                            <button class="button icon ion-plus" ng-click="ctrl.getOpponentPlayer().life = ctrl.getOpponentPlayer().life + 1"></button>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="range counter-range">
+                            <i class="icon ion-sad-outline"></i>
+                            <input type="range" name="volume" ng-model="ctrl.getOpponentPlayer().life" min="0" max="30" parse-model-as-int>
+                            <i class="icon ion-happy-outline"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="player-opponent">
+                            <img width="50px" ng-src="{{ctrl.getOpponentPlayer().pic}}" class="radius-25"/>
+
+                            <div class="player-label">{{ctrl.getOpponentPlayer().name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row counter-row bottom-counter-row">
+            <div class="bottom-counter-container">
+                <div class="row" style="margin-top: 10px;">
+                    <div class="player-self">
+                        <div class="player-label">{{ctrl.getUserPlayer().name}}</div>
+                        <img width="50px" ng-src="{{ctrl.getUserPlayer().pic}}" class="radius-25"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="margin-center">
+                        <button class="button icon ion-minus" ng-click="ctrl.getUserPlayer().life = ctrl.getUserPlayer().life - 1"></button>
+                        <div class="counter-number">{{ctrl.getUserPlayer().life}}</div>
+                        <button class="button icon ion-plus" ng-click="ctrl.getUserPlayer().life = ctrl.getUserPlayer().life + 1"></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="range counter-range">
+                        <i class="icon ion-sad-outline"></i>
+                        <input type="range" name="volume" ng-model="ctrl.getUserPlayer().life" min="0" max="30" parse-model-as-int>
+                        <i class="icon ion-happy-outline"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vs-label">
+            Vs.
+        </div>
+    </ion-pane>
+</ion-view>

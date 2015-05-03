@@ -1,0 +1,28 @@
+<ion-view view-title="Decks">
+    <ion-content>
+        <button class="button button-full button-positive" ng-click="ctrl.addDeck()">Add Deck</button>
+        <ion-list>
+            <ion-item class="item item-divider">
+                Decks
+            </ion-item>
+            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="deck in ctrl.decks" type="item-text-wrap" ng-click="ctrl.editDeck(deck)">
+                <img ng-src="{{deck.image}}"/>
+
+                <h2>{{deck.title}}</h2>
+
+                <p>
+                    <span ng-if="deck.colors.white" class="color-circle white-bg"></span>
+                    <span ng-if="deck.colors.blue" class="color-circle positive-bg"></span>
+                    <span ng-if="deck.colors.black" class="color-circle dark-bg"></span>
+                    <span ng-if="deck.colors.red" class="color-circle assertive-bg"></span>
+                    <span ng-if="deck.colors.green" class="color-circle balanced-bg"></span>
+                </p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+
+                <ion-option-button class="button-assertive" ng-click="ctrl.removeDeck(deck)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
