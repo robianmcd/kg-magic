@@ -5,6 +5,7 @@
         this.user = user;
 
         this.gameFbObj = $firebaseObject(new Firebase('https://kg-magic.firebaseio.com/games/' + $state.params.gameId));
+        this.game = this.gameFbObj;
 
         this.gameFbObj.$watch(function () {
             //If the game has been deleted
