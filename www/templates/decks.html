@@ -5,7 +5,8 @@
             <ion-item class="item item-divider">
                 Decks
             </ion-item>
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="deck in ctrl.decks" type="item-text-wrap" ng-click="ctrl.editDeck(deck)">
+            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right"
+                      ng-repeat="deck in ctrl.decks" type="item-text-wrap" ng-click="ctrl.editDeck(deck)">
                 <img ng-src="{{deck.image}}"/>
 
                 <h2>{{deck.title}}</h2>
