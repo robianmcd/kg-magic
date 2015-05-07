@@ -32,6 +32,11 @@
 
         this.$cordovaCamera.getPicture(cameraOptions)
             .then(function (imgData) {
+                self.deck.image = 'data:image/jpeg;base64,' + imgData;
+            });
+
+        /*
+            .then(function (imgData) {
                 return self.$jrCrop.crop({
                     url: 'data:image/jpeg;base64,' + imgData,
                     width: 312,
@@ -41,6 +46,7 @@
             .then(function (canvas) {
                 self.deck.image = canvas.toDataURL();
             });
+        */
     };
 
     DeckDetailsCtrl.prototype.save = function () {

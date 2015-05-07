@@ -1,7 +1,9 @@
 (function () {
-    function DecksCtrl($state, user, $firebaseArray) {
+    function DecksCtrl($state, $firebaseArray) {
         this.$state = $state;
-        this.decks = $firebaseArray(new Firebase('https://kg-magic.firebaseio.com/users/' + user.uid + '/decks'));
+
+        //var fbDecksRef = new Firebase('https://kg-magic.firebaseio.com/users/' + user.uid + '/decks');
+        //this.decks = $firebaseArray(fbDecksRef);
     }
 
     angular.module('kgMagic').controller('DecksCtrl', DecksCtrl);

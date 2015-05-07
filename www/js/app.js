@@ -34,9 +34,7 @@ angular.module('kgMagic', ['ionic', 'firebase', 'ngCordova', 'jrCrop'])
                 templateUrl: "templates/tabs.html",
                 controller: 'TabsCtrl as tabsCtrl',
                 resolve: {
-                    "user": ["auth", function (auth) {
-                        return auth.$requireAuth();
-                    }]
+
                 }
             })
             .state('tab.decks', {
